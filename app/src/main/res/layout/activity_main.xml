@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.MainActivity">
+
+    <include
+        android:id="@+id/mainLogoLayout"
+        layout="@layout/logo_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="16dp"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/mainProfilePictureImageView"
+        android:layout_margin="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/mainBottomCardView"
+        app:cardBackgroundColor="@android:color/white"
+        android:layout_alignParentBottom="true"
+        app:contentPadding="16dp"
+        app:cardElevation="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mainDepartmentsRecyclerView"
+                    android:layout_weight="1"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                </android.support.v7.widget.RecyclerView>
+                <ImageView
+                    android:id="@+id/mainDepartmentsSortImageView"
+                    android:src="@drawable/ic_sort_black_512dp"
+                    android:tint="@color/colorAccentSecondary"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/mainProfileImageView"
+                    android:tint="@color/colorTextLight"
+                    android:src="@drawable/ic_person_outline_black_24dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/mainWishListImageView"
+                    android:layout_toEndOf="@id/mainProfileImageView"
+                    android:tint="@color/colorTextLight"
+                    android:layout_marginStart="16dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/mainSearchImageView"
+                    android:layout_marginStart="16dp"
+                    android:tint="@color/colorTextLight"
+                    android:layout_toEndOf="@id/mainWishListImageView"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_search_black_24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/mainCartImageView"
+                    android:tint="@color/colorTextLight"
+                    android:layout_alignParentEnd="true"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_shopping_cart_black_24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_below="@id/mainLogoLayout"
+        android:layout_above="@id/mainBottomCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+
+</RelativeLayout>

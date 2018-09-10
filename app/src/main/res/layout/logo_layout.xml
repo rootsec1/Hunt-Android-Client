@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        tools:src="@drawable/price_tag_black"
+        android:tint="@color/colorTextDark"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:id="@+id/logoTextView"
+        android:fontFamily="@font/fredoka_one_regular"
+        android:textSize="32sp"
+        android:textColor="@color/colorTextLight"
+        android:layout_marginStart="16dp"
+        android:text="@string/app_name_lowercase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
