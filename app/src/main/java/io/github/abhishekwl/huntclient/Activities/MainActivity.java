@@ -2,6 +2,7 @@ package io.github.abhishekwl.huntclient.Activities;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -21,6 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import io.github.abhishekwl.huntclient.Adapters.DepartmentNamesMainRecyclerViewAdapter;
+import io.github.abhishekwl.huntclient.Adapters.MainViewPagerAdapter;
 import io.github.abhishekwl.huntclient.Helpers.ApiClient;
 import io.github.abhishekwl.huntclient.Helpers.ApiInterface;
 import io.github.abhishekwl.huntclient.Models.Customer;
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     CardView mainBottomCardView;
     @BindView(R.id.mainProfilePictureImageView)
     ImageView mainProfilePictureImageView;
+    @BindView(R.id.mainViewPager)
+    ViewPager mainViewPager;
     @BindFont(R.font.fredoka_one_regular)
     Typeface fredokaOneTypeface;
     @BindColor(android.R.color.black)
@@ -57,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ApiInterface apiInterface;
     private Customer currentCustomer;
+    private MainViewPagerAdapter mainViewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(getApplicationContext()).load(R.drawable.price_tag_black).into(logoImageView);
         Glide.with(getApplicationContext()).load(Objects.requireNonNull(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getPhotoUrl()).toString()).into(mainProfilePictureImageView);
         setupDepartmentsRecyclerView();
+        mainViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager(),getResources().getStringArray(R.array.departments));
+        mainViewPager.setAdapter(mainViewPagerAdapter);
     }
 
     private void setupDepartmentsRecyclerView() {

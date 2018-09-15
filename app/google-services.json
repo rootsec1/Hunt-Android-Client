@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "272634486530-j9ufil348qe7i2rv7dshitus6a3rgo67.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.abhishekwl.huntadmin",
+            "certificate_hash": "25b5235d78c96e22452faabc0d28d383695968c8"
+          }
+        },
+        {
           "client_id": "272634486530-sjvuevnjugsmjm67sd4ra2pp0hpnqmul.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -64,6 +72,14 @@
           "android_info": {
             "package_name": "io.github.abhishekwl.huntclient",
             "certificate_hash": "f3ad72811de22b24f89d90ca1d6d6db3d0358875"
+          }
+        },
+        {
+          "client_id": "272634486530-um9en4a43pqh74lsa3bjjd5hspoktajk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.abhishekwl.huntclient",
+            "certificate_hash": "25b5235d78c96e22452faabc0d28d383695968c8"
           }
         },
         {
