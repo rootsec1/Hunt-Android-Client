@@ -4,11 +4,12 @@ package io.github.abhishekwl.huntclient.Fragments;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import io.github.abhishekwl.huntclient.R;
@@ -17,6 +18,9 @@ import io.github.abhishekwl.huntclient.R;
  * A simple {@link Fragment} subclass.
  */
 public class DepartmentFragment extends Fragment {
+
+    @BindView(R.id.departmentFragmentNameTextView)
+    TextView departmentNameTextView;
 
     private String departmentName;
     private View rootView;
@@ -48,7 +52,7 @@ public class DepartmentFragment extends Fragment {
     }
 
     private void initializeViews() {
-        Log.v("SCREEN", departmentName);
+        departmentNameTextView.setText(departmentName);
     }
 
 }

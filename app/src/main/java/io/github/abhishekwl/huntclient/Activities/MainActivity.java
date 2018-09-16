@@ -25,6 +25,7 @@ import io.github.abhishekwl.huntclient.Adapters.DepartmentNamesMainRecyclerViewA
 import io.github.abhishekwl.huntclient.Adapters.MainViewPagerAdapter;
 import io.github.abhishekwl.huntclient.Helpers.ApiClient;
 import io.github.abhishekwl.huntclient.Helpers.ApiInterface;
+import io.github.abhishekwl.huntclient.Helpers.RecyclerViewItemClickListener;
 import io.github.abhishekwl.huntclient.Models.Customer;
 import io.github.abhishekwl.huntclient.R;
 
@@ -85,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
         setupDepartmentsRecyclerView();
         mainViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager(),getResources().getStringArray(R.array.departments));
         mainViewPager.setAdapter(mainViewPagerAdapter);
+        mainViewPager.setPadding(0, 0, 128, 0);
+        mainViewPager.setClipToPadding(false);
     }
 
     private void setupDepartmentsRecyclerView() {
@@ -92,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
         mainDepartmentsRecyclerView.setHasFixedSize(true);
         mainDepartmentsRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mainDepartmentsRecyclerView.setAdapter(new DepartmentNamesMainRecyclerViewAdapter(getResources().getStringArray(R.array.departments), getApplicationContext()));
+        mainDepartmentsRecyclerView.addOnItemTouchListener(new RecyclerViewItemClickListener(getApplicationContext(), (view, position) -> mainViewPager.setCurrentItem(position)));
     }
 
     @Override

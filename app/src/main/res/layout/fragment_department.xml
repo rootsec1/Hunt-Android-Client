@@ -3,7 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Fragments.DepartmentFragment">
+
+    <TextView
+        android:id="@+id/departmentFragmentNameTextView"
+        tools:text="DepartmentName"
+        android:textSize="32sp"
+        android:layout_margin="16dp"
+        android:fontFamily="sans-serif-light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/departmentFragmentRecyclerView"
